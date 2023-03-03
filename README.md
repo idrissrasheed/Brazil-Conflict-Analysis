@@ -1,7 +1,7 @@
 # Brazil Conflict Analysis Report
 
 ## Data Description
-The Brazil Conflict Tracker (2018-2023) Kaggle dataset provides a comprehensive record of both violent and non-violent conflicts in Brazil since 2018. The data source is from the Armed Conflict Location & Event Data Project (ACLED), which collects event data for disaggregated conflict analysis and crisis mapping. The last data update was on January 20th, 2023, and the dataset uploader Justin Oh removed ID-related variables and conflicts outside of Brazil provided by ACLED from the original dataset. 
+[The Brazil Conflict Tracker (2018-2023) Kaggle dataset](https://www.kaggle.com/datasets/justin2028/brazil-conflict-tracker-20182023) provides a comprehensive record of both violent and non-violent conflicts in Brazil since 2018. The data source is from the Armed Conflict Location & Event Data Project (ACLED), which tracks real-global political violence and protest in real-time. The last data update was on January 20th, 2023, and the dataset uploader Justin Oh removed ID-related variables and conflicts outside of Brazil provided by ACLED from the original dataset. 
 
 ## Questions
 
