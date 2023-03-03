@@ -217,8 +217,8 @@ map.save('top_fatalities.html')
 
 ```python
 # Export data tables
-conflict_pc.to_csv('Breakdown of Types of Conflicts.csv', index=False)
-subconflict_pc.to_csv('Breakdown of Types of Subconflicts.csv', index=False)
+conflict_pc.to_csv('Breakdown of Types of Conflicts.csv', index=True)
+subconflict_pc.to_csv('Breakdown of Types of Subconflicts.csv', index=True)
 fat_by_conflict_type.to_csv('Fatalities Conflict Type.csv', index=False)
 fat_by_subconflict_type.to_csv('Fatalities Subconflict Type.csv', index=False)
 top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)        
@@ -228,7 +228,8 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Fal
 * Battles (32.4%) and Protests (32.2%) make up the majority of main conflicts 
 * Protests decreased between 2019 and 2020 by 61.86% and increased by 62.53% between 2020 and 2021 
 * Remote violence and explosives have the rarest occurences out of the other main conflicts
-* Strategic development is the only main conflict that contributed to 0 fatalities while making up 
+* Strategic development is the only main conflict that contributed to 0 fatalities while making up 3.7% of conflicts
+* 
 
 
 
