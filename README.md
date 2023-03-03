@@ -5,7 +5,7 @@ The Brazil Conflict Tracker (2018-2023) Kaggle dataset provides a comprehensive 
 
 ## Questions
 
-* How are various types of conflicts and fatalies spread out annually?
+* How are various types of conflicts and fatalities spread out annually?
 * Which types of conflicts have the highest amount of deaths?
 * Which locations in Brazil tend to have the highest death tolls?
 
