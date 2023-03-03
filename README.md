@@ -1,9 +1,15 @@
-# Brazil-Conflict-Analysis
+# Brazil Conflict Analysis Report
 
-Brazil Political Violence and Protests Analysis
-This is an analysis of political violence and protests in Brazil using data from ACLED. The aim of this analysis is to explore the data and gain insights into the types of conflicts and the number of fatalities associated with them.
+## Data Description
+The Brazil Conflict Tracker (2018-2023) Kaggle dataset provides a comprehensive record of both violent and non-violent conflicts in Brazil since 2018. The data source is from the Armed Conflict Location & Event Data Project (ACLED), which collects event data for disaggregated conflict analysis and crisis mapping. The last data update was on January 20th, 2023, and the dataset uploader Justin Oh removed ID-related variables and conflicts outside of Brazil provided by ACLED from the original dataset. 
 
-# Libraries Used
+## Questions
+
+* How are various types of conflicts spread out annually?
+* Which types of conflicts have the highest amount of deaths?
+* Which locations in Brazil tend to have high death tolls?
+
+## Python Libraries
 The following Python libraries are used in this analysis:
 
 * pandas
@@ -11,28 +17,10 @@ The following Python libraries are used in this analysis:
 * matplotlib
 * seaborn
 
-
-# Data Used
-The data used is from the Brazil Political Violence and Protests Dataset.csv file, which contains information about political violence and protests in Brazil from 2017 to 2020.
-
-
-# Questions
-
-## How are various types of conflicts spread out annually?
-
-## 
-
-## Which types of conflicts have the highest amount of deaths?
-
-## Which locations in Brazil tend to have high death tolls?
-
-
-
 ## Analysis
 The analysis includes the following steps:
 
-1. Importing the necessary libraries and data.
-Cleaning the data by renaming columns.
+1. Import the necessary libraries and data and clean the data. 
 
 ```python
 import pandas as pd
@@ -50,7 +38,7 @@ conflicts = pd.read_csv('Brazil Political Violence and Protests Dataset.csv')
 conflicts = conflicts.rename(columns={'EVENT_TYPE': 'CONFLICT', 'SUB_EVENT_TYPE': 'SUBCONFLICT'})
 ```
 
-2. Exploring the data by printing the first few rows and information about the data, printing unique conflict and subconflict types, and getting the value counts of conflict types. Creating a pie chart to visualize the number of conflicts by type and provide tables for conflict and subconflict types.
+2. Explore the data by printing the first few rows and information about the data, printing unique conflict and subconflict types, and getting the value counts of conflict types. Create a pie chart to visualize the number of conflicts by type and provide tables for conflict and subconflict types.
 
 ```python
 # Explore data
@@ -107,7 +95,7 @@ subconflict_pc = subconflict_pc.rename_axis('SUBCONFLICT TYPE')
 print(subconflict_pc)
 ```
 
-3. Grouping conflicts by year and event type, creating a pivot table with years as rows and event types as columns, and creating a heatmap to visualize the number of conflicts by type per year.
+3. Group conflicts by year and event type, creating a pivot table with years as rows and event types as columns, and create a heatmap to visualize the number of conflicts by type per year.
 
 ```python
 # group conflicts by year and event type
@@ -124,7 +112,7 @@ plt.title('Number of Conflicts by Type per Year')
 plt.show()
 ```
 
-4. Printing the total number of fatalities and plotting a line chart to visualize the number of fatalities per year.
+4. Print the total number of fatalities and plotting a line chart to visualize the number of fatalities per year.
 
 ```python
 # Extract year from event date column
@@ -156,7 +144,7 @@ for i, j in enumerate(fat_by_year.values):
 plt.show()
 ```
 
-5. Grouping data fatalities by conflict type, plotting a bar chart of fatalities by conflict type, and adding the number of fatalities to each plot point.
+5. Group fatalities by conflict type, plot a bar chart of fatalities by conflict type, and add the number of fatalities to each plot point.
 
 ```python
 # Group data fatalities by conflict type
@@ -176,8 +164,7 @@ plt.show()
 
 print(fat_by_conflict_type)
 ```
-
-6. Grouping fatalities by subconflict type, plotting a bar chart of fatalities by subconflict type, and adding the number of fatalities to each plot point.
+6. Group fatalities by subconflict type, plotting a bar chart of fatalities by subconflict type, and adding the number of fatalities to each plot point.
 
 ```python
 # Group fatalities by subconflict type
@@ -198,7 +185,7 @@ plt.show()
 print(fat_by_subconflict_type)
 ```
 
-7. Grouping the top 10 locations with the most fatalities and creating a map using folium to visualize their geographic locations.
+7. Group the top 10 locations with the most fatalities and create a folium map to visualize their geographic locations.
 
 ```python
 # Group top 10 locations with the most fatalities
@@ -237,15 +224,14 @@ fat_by_conflict_type.to_csv('Fatalities Conflict Type.csv', index=False)
 fat_by_subconflict_type.to_csv('Fatalities Subconflict Type.csv', index=False)
 top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)        
 ```
+## Key Findings
 
-# Key Findings
+### Fatalities
 
-## Fatalities
+### Conflicts
 
-## Conflicts
+### Location-Based Findings
 
-## Location-Based Findings
-
-# Further Considerations
+## Further Considerations
 * Create a diagram to investigation the association between "ACTOR1" and "ACTOR" and in relation to fatality rates 
 * Build a map to show which "CONFLICT" category is the most prevalent in certain parts of Brazil 
