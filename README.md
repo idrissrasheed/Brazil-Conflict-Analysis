@@ -22,6 +22,7 @@ The analysis includes the following steps:
 1. Import the necessary libraries and data and clean the data. 
 
 ```python
+# Import libraries
 import pandas as pd
 import folium as flm
 import matplotlib.pyplot as plt
@@ -36,7 +37,7 @@ conflicts = pd.read_csv('Brazil Political Violence and Protests Dataset.csv')
 # Clean data
 conflicts = conflicts.rename(columns={'EVENT_TYPE': 'CONFLICT', 'SUB_EVENT_TYPE': 'SUBCONFLICT'})
 
-# Extract year from event date column
+# Extract year from event date column for later
 conflicts['YEAR'] = pd.to_datetime(conflicts['EVENT_DATE']).dt.year
 ```
 
@@ -67,6 +68,9 @@ conflict_p = round(conflict_counts / conflict_counts.sum() * 100,2).astype(str) 
 # Combine count and percentage into a dataframe
 conflict_pc = pd.DataFrame({'COUNT': conflict_counts, 'PERCENTAGE': conflict_p})
 
+# Rename the index column
+conflict_pc = conflict_pc.rename_axis('CONFLICT TYPE')
+
 # Create pie chart
 plt.pie(conflict_counts, labels=conflict_counts.index, autopct='%1.1f%%')
 plt.title('Main Conflict Types')
@@ -77,6 +81,7 @@ plt.show()
 # Display the conflict stats
 print(conflict_pc)
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Main%20Conflict%20Type%20Pie%20Chart.png)
 
 ```python
@@ -87,7 +92,7 @@ subconflict_counts = conflicts['SUBCONFLICT'].value_counts()
 subconflict_p = round(subconflict_counts / subconflict_counts.sum() * 100,2).astype(str) + '%'
 
 # Combine count and percentage into a dataframe
-subconflict_pc = pd.DataFrame({'COUNT': conflict_counts, 'PERCENTAGE': conflict_p})
+subconflict_pc = pd.DataFrame({'COUNT': subconflict_counts, 'PERCENTAGE': subconflict_p})
 
 # Rename the index column
 subconflict_pc = subconflict_pc.rename_axis('SUBCONFLICT TYPE')
@@ -108,15 +113,21 @@ conflict_counts = conflicts.groupby(['YEAR', 'CONFLICT']).size().reset_index(nam
 pivot_table = conflict_counts.pivot_table(index='CONFLICT', columns='YEAR', values='COUNT', aggfunc='sum')
 
 # Create heatmap using seaborn
-sns.set(style='white')
 plt.figure(figsize=(12,8))
-sns.heatmap(pivot_table, cmap='YlOrRd', annot=True, fmt='d', linewidths=.5)
-plt.title('Number of Main Conflicts per Year')
+sns.heatmap(pivot_table, cmap='Blues', annot=True, fmt='d', linecolor='black', linewidths=1)
+plt.title('Number of Main Conflicts by Year')
 plt.show()
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Main%20Conflicts%20by%20Year%20Heatmap.png)
 
 4. Print the total number of fatalities and plot a line chart to visualize the number of fatalities per year.
+
+```python
+# Print total number of fatalities
+total_fatalities = conflicts['FATALITIES'].sum()
+print(f'Total number of fatalities: {total_fatalities:,}')
+```
 
 ```python
 # Group by year and total fatalities
@@ -134,9 +145,9 @@ ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 
 # Label axes and title
-plt.xlabel('Year')
-plt.ylabel('Fatalities')
-plt.title('Number of Fatalities per Year')
+plt.xlabel('YEAR')
+plt.ylabel('FATALITIES')
+plt.title('Number of Fatalities by Year')
 
 # Add the number of fatalities to each plot point
 for i, j in enumerate(fat_by_year.values):
@@ -144,6 +155,7 @@ for i, j in enumerate(fat_by_year.values):
 
 plt.show()
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Year%20Plot.png)
 
 5. Create a pivot table with main conflicts as rows, year as columns and fatalities as values, and output a heatmap to visualize the number of conflicts by type per year.
@@ -158,6 +170,7 @@ sns.heatmap(pivot_table2, cmap='Reds', annot=True, fmt='d', linecolor='black', l
 plt.title('Number of Fatalities by Main Conflict and Year')
 plt.show()
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Main%20Conflict%20and%20Year%20Heatmap.png)
 
 6. Group fatalities by conflict type, plot a bar chart of fatalities by conflict type, and add the number of fatalities to each plot point.
@@ -173,13 +186,14 @@ plt.bar(fat_by_conflict_type['CONFLICT'], fat_by_conflict_type['FATALITIES'])
 plt.xticks(rotation=90)
 plt.xlabel('Conflict Type')
 plt.ylabel('Fatalities')
-plt.title('Number of Fatalities by Main Conflict')
+plt.title('Number of Fatalities by Conflict')
 for i, j in enumerate(fat_by_conflict_type['FATALITIES']):
     plt.text(i, j, str(j), ha='center', va='bottom')
 plt.show()
 
 print(fat_by_conflict_type)
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Main%20Conflict%20Barplot.png)
 
 7. Group fatalities by subconflict type, plotting a bar chart of fatalities by subconflict type, and adding the number of fatalities to each plot point.
@@ -202,6 +216,7 @@ plt.show()
 
 print(fat_by_subconflict_type)
 ```
+
 ![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Subconflict%20Barplot.png)
 
 8. Group the top 10 locations with the most fatalities and create a folium map to visualize their geographic locations.
@@ -232,6 +247,7 @@ for city, fatalities in top_ten_fat.items():
     
 # Save the map as an HTML file
 map.save('top_fatalities.html')
+map
 ```
 9.  Export the data
 
@@ -241,7 +257,7 @@ conflict_pc.to_csv('Breakdown of Types of Main Conflicts.csv', index=True)
 subconflict_pc.to_csv('Breakdown of Types of Subconflicts.csv', index=True)
 fat_by_conflict_type.to_csv('Fatalities by Main Conflict Type.csv', index=False)
 fat_by_subconflict_type.to_csv('Fatalities by Subconflict Type.csv', index=False)
-top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)        
+top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)             
 ```
 ## Key Findings
 
@@ -250,6 +266,7 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Fal
 * Remote violence and explosives have the rarest occurences out of the other main conflicts
 * Strategic development is the only main conflict that contributed to 0 fatalities while making up 3.7% of conflicts
 * Violence against civilians (52.61%) has the highest rate of fatalities for main conflicts, attacks (52.46%) have the highest rate of fatalities out of any subconflict
+* 
 
 ## Further Considerations
 * Create a diagram to investigation the association between "ACTOR1" and "ACTOR" and in relation to fatality rates 
