@@ -74,7 +74,7 @@ plt.show()
 # Display the conflict stats
 print(conflict_pc)
 ```
-
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
 ```python
 # Get value counts of subconflict types
 subconflict_counts = conflicts['SUBCONFLICT'].value_counts()
@@ -225,9 +225,12 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Fal
 ```
 ## Key Findings
 
-### Fatalities
+* Battles (32.4%) and Protests (32.2%) make up the majority of main conflicts 
+* Protests decreased between 2019 and 2020 by 61.86% and increased by 62.53% between 2020 and 2021 
+* Remote violence and explosives have the rarest occurences out of the other main conflicts
+* Strategic development is the only main conflict that contributed to 0 fatalities while making up 
 
-### Conflicts
+
 
 ### Location-Based Findings
 
