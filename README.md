@@ -128,6 +128,7 @@ for i, j in enumerate(fat_by_year.values):
 
 plt.show()
 ```
+
 5. Grouping data fatalities by conflict type, plotting a bar chart of fatalities by conflict type, and adding the number of fatalities to each plot point.
 
 ```python
@@ -200,7 +201,7 @@ for city, fatalities in top_ten_fat.items():
 map.save('top_fatalities.html')
 ```
 
-# Lessons Learned
+# Key Findings
 
 ## Fatalities
 
