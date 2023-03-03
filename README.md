@@ -5,12 +5,11 @@ The Brazil Conflict Tracker (2018-2023) Kaggle dataset provides a comprehensive 
 
 ## Questions
 
-* How are various types of conflicts spread out annually?
+* How are various types of conflicts and fatalies spread out annually?
 * Which types of conflicts have the highest amount of deaths?
-* Which locations in Brazil tend to have high death tolls?
+* Which locations in Brazil tend to have the highest death tolls?
 
-## Python Libraries
-The following Python libraries are used in this analysis:
+## Python Libraries Deployed
 
 * pandas
 * folium
@@ -214,7 +213,7 @@ for city, fatalities in top_ten_fat.items():
 # Save the map as an HTML file
 map.save('top_fatalities.html')
 ```
-8.  Exporting the data
+8.  Export the data
 
 ```python
 # Export data tables
