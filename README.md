@@ -69,7 +69,7 @@ conflict_pc = pd.DataFrame({'COUNT': conflict_counts, 'PERCENTAGE': conflict_p})
 
 # Create pie chart
 plt.pie(conflict_counts, labels=conflict_counts.index, autopct='%1.1f%%')
-plt.title('Conflict Types')
+plt.title('Main Conflict Types')
 
 # Display the plot
 plt.show()
@@ -77,7 +77,7 @@ plt.show()
 # Display the conflict stats
 print(conflict_pc)
 ```
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Conflict%20Types%20Pie%20Chart.png)
 ```python
 # Get value counts of subconflict types
 subconflict_counts = conflicts['SUBCONFLICT'].value_counts()
@@ -100,17 +100,17 @@ print(subconflict_pc)
 3. Group conflicts by year and event type, create a pivot table with years as rows and event types as columns, and output a heatmap to visualize the number of conflicts by type per year.
 
 ```python
-# group conflicts by year and event type
+# Group conflicts by year and event type
 conflict_counts = conflicts.groupby(['YEAR', 'CONFLICT']).size().reset_index(name='COUNT')
 
-# create pivot table with year as rows and event types as columns
+# Create pivot table with year as rows and event types as columns
 pivot_table = conflict_counts.pivot_table(index='CONFLICT', columns='YEAR', values='COUNT', aggfunc='sum')
 
-# create heatmap using seaborn
+# Create heatmap using seaborn
 sns.set(style='white')
 plt.figure(figsize=(12,8))
 sns.heatmap(pivot_table, cmap='YlOrRd', annot=True, fmt='d', linewidths=.5)
-plt.title('Number of Conflicts by Type per Year')
+plt.title('Number of Main Conflicts per Year')
 plt.show()
 ```
 
@@ -156,7 +156,7 @@ plt.bar(fat_by_conflict_type['CONFLICT'], fat_by_conflict_type['FATALITIES'])
 plt.xticks(rotation=90)
 plt.xlabel('Conflict Type')
 plt.ylabel('Fatalities')
-plt.title('Number of Fatalities by Conflict')
+plt.title('Number of Fatalities by Main Conflict')
 for i, j in enumerate(fat_by_conflict_type['FATALITIES']):
     plt.text(i, j, str(j), ha='center', va='bottom')
 plt.show()
@@ -217,10 +217,10 @@ map.save('top_fatalities.html')
 
 ```python
 # Export data tables
-conflict_pc.to_csv('Breakdown of Types of Conflicts.csv', index=True)
+conflict_pc.to_csv('Breakdown of Types of Main Conflicts.csv', index=True)
 subconflict_pc.to_csv('Breakdown of Types of Subconflicts.csv', index=True)
-fat_by_conflict_type.to_csv('Fatalities Conflict Type.csv', index=False)
-fat_by_subconflict_type.to_csv('Fatalities Subconflict Type.csv', index=False)
+fat_by_conflict_type.to_csv('Fatalities by Main Conflict Type.csv', index=False)
+fat_by_subconflict_type.to_csv('Fatalities by Subconflict Type.csv', index=False)
 top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)        
 ```
 ## Key Findings
@@ -229,11 +229,7 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Fal
 * Protests decreased between 2019 and 2020 by 61.86% and increased by 62.53% between 2020 and 2021 
 * Remote violence and explosives have the rarest occurences out of the other main conflicts
 * Strategic development is the only main conflict that contributed to 0 fatalities while making up 3.7% of conflicts
-* 
-
-
-
-### Location-Based Findings
+* Violence against civilians (52.61%) has the highest rate of fatalities for main conflicts, attacks (52.46%) have the highest rate of fatalities out of any subconflict
 
 ## Further Considerations
 * Create a diagram to investigation the association between "ACTOR1" and "ACTOR" and in relation to fatality rates 
