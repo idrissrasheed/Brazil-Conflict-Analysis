@@ -249,6 +249,9 @@ for city, fatalities in top_ten_fat.items():
 map.save('top_fatalities.html')
 map
 ```
+
+![image](https://user-images.githubusercontent.com/25093626/222829748-96a6599c-21ea-413e-adbb-0f669673aacc.png)
+
 9.  Export the data
 
 ```python
@@ -257,7 +260,7 @@ conflict_pc.to_csv('Breakdown of Types of Main Conflicts.csv', index=True)
 subconflict_pc.to_csv('Breakdown of Types of Subconflicts.csv', index=True)
 fat_by_conflict_type.to_csv('Fatalities by Main Conflict Type.csv', index=False)
 fat_by_subconflict_type.to_csv('Fatalities by Subconflict Type.csv', index=False)
-top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=False)             
+top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=True)             
 ```
 ## Key Findings
 
@@ -266,7 +269,7 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Fal
 * Remote violence and explosives have the rarest occurences out of the other main conflicts
 * Strategic development is the only main conflict that contributed to 0 fatalities while making up 3.7% of conflicts
 * Violence against civilians (52.61%) has the highest rate of fatalities for main conflicts, attacks (52.46%) have the highest rate of fatalities out of any subconflict
-* 
+* Manaus has the highest amount of fatalities in the County at a total of 2,344 fatalities 
 
 ## Further Considerations
 * Create a diagram to investigation the association between "ACTOR1" and "ACTOR" and in relation to fatality rates 
