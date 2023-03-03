@@ -77,7 +77,8 @@ plt.show()
 # Display the conflict stats
 print(conflict_pc)
 ```
-![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Conflict%20Types%20Pie%20Chart.png)
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Main%20Conflict%20Type%20Pie%20Chart.png)
+
 ```python
 # Get value counts of subconflict types
 subconflict_counts = conflicts['SUBCONFLICT'].value_counts()
@@ -113,6 +114,7 @@ sns.heatmap(pivot_table, cmap='YlOrRd', annot=True, fmt='d', linewidths=.5)
 plt.title('Number of Main Conflicts per Year')
 plt.show()
 ```
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Main%20Conflicts%20by%20Year%20Heatmap.png)
 
 4. Print the total number of fatalities and plot a line chart to visualize the number of fatalities per year.
 
@@ -142,8 +144,23 @@ for i, j in enumerate(fat_by_year.values):
 
 plt.show()
 ```
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Year%20Plot.png)
 
-5. Group fatalities by conflict type, plot a bar chart of fatalities by conflict type, and add the number of fatalities to each plot point.
+5. Create a pivot table with main conflicts as rows, year as columns and fatalities as values, and output a heatmap to visualize the number of conflicts by type per year.
+
+```python
+# create pivot table for num of fatalities by main conflict by year
+pivot_table2 = conflicts.pivot_table(index='CONFLICT', columns='YEAR', values='FATALITIES', aggfunc=sum)
+
+# Create heatmap using seaborn
+plt.figure(figsize=(12,8))
+sns.heatmap(pivot_table2, cmap='Reds', annot=True, fmt='d', linecolor='black', linewidths=1)
+plt.title('Number of Fatalities by Main Conflict and Year')
+plt.show()
+```
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Main%20Conflict%20and%20Year%20Heatmap.png)
+
+6. Group fatalities by conflict type, plot a bar chart of fatalities by conflict type, and add the number of fatalities to each plot point.
 
 ```python
 # Group data fatalities by conflict type
@@ -163,7 +180,9 @@ plt.show()
 
 print(fat_by_conflict_type)
 ```
-6. Group fatalities by subconflict type, plotting a bar chart of fatalities by subconflict type, and adding the number of fatalities to each plot point.
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Main%20Conflict%20Barplot.png)
+
+7. Group fatalities by subconflict type, plotting a bar chart of fatalities by subconflict type, and adding the number of fatalities to each plot point.
 
 ```python
 # Group fatalities by subconflict type
@@ -183,8 +202,9 @@ plt.show()
 
 print(fat_by_subconflict_type)
 ```
+![alt text](https://github.com/idrissrasheed/Brazil-Conflict-Analysis/blob/main/Outputs/Plots/Number%20of%20Fatalities%20by%20Subconflict%20Barplot.png)
 
-7. Group the top 10 locations with the most fatalities and create a folium map to visualize their geographic locations.
+8. Group the top 10 locations with the most fatalities and create a folium map to visualize their geographic locations.
 
 ```python
 # Group top 10 locations with the most fatalities
@@ -213,7 +233,7 @@ for city, fatalities in top_ten_fat.items():
 # Save the map as an HTML file
 map.save('top_fatalities.html')
 ```
-8.  Export the data
+9.  Export the data
 
 ```python
 # Export data tables
