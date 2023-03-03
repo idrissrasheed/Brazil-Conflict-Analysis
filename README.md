@@ -37,7 +37,7 @@ conflicts = pd.read_csv('Brazil Political Violence and Protests Dataset.csv')
 conflicts = conflicts.rename(columns={'EVENT_TYPE': 'CONFLICT', 'SUB_EVENT_TYPE': 'SUBCONFLICT'})
 ```
 
-2. Explore the data by printing the first few rows and information about the data, printing unique conflict and subconflict types, and getting the value counts of conflict types. Create a pie chart to visualize the number of conflicts by type and provide tables for conflict and subconflict types.
+2. Explore the data by printing the first few rows and information about the data, print unique conflict and subconflict types, and obtain the value counts of conflict types. Create a pie chart to visualize the number of conflicts by type and provide tables for conflict and subconflict types.
 
 ```python
 # Explore data
@@ -94,7 +94,7 @@ subconflict_pc = subconflict_pc.rename_axis('SUBCONFLICT TYPE')
 print(subconflict_pc)
 ```
 
-3. Group conflicts by year and event type, creating a pivot table with years as rows and event types as columns, and create a heatmap to visualize the number of conflicts by type per year.
+3. Group conflicts by year and event type, create a pivot table with years as rows and event types as columns, and output a heatmap to visualize the number of conflicts by type per year.
 
 ```python
 # group conflicts by year and event type
@@ -111,7 +111,7 @@ plt.title('Number of Conflicts by Type per Year')
 plt.show()
 ```
 
-4. Print the total number of fatalities and plotting a line chart to visualize the number of fatalities per year.
+4. Print the total number of fatalities and plot a line chart to visualize the number of fatalities per year.
 
 ```python
 # Extract year from event date column
