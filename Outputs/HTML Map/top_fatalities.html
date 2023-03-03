@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b092b75255f461e720f6372a95939ba6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b092b75255f461e720f6372a95939ba6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b092b75255f461e720f6372a95939ba6 = L.map(
+                "map_b092b75255f461e720f6372a95939ba6",
+                {
+                    center: [-10.788497, -42.879873],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4.2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_24ba1d00141d593be38b60f1cd52d586 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var marker_b55e66e8d453850d958c00cc540a9267 = L.marker(
+                [-3.102, -60.025],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_bce65deb81ea456fa68803b6ac6b01c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b55e66e8d453850d958c00cc540a9267.setIcon(icon_bce65deb81ea456fa68803b6ac6b01c7);
+        
+    
+        var popup_aeb8b439c6c279874708a3284c6152c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00fb4b777b60e6b011d050efed17da29 = $(`<div id="html_00fb4b777b60e6b011d050efed17da29" style="width: 100.0%; height: 100.0%;"><strong>Manaus</strong><br>2344 fatalities</div>`)[0];
+                popup_aeb8b439c6c279874708a3284c6152c3.setContent(html_00fb4b777b60e6b011d050efed17da29);
+            
+        
+
+        marker_b55e66e8d453850d958c00cc540a9267.bindPopup(popup_aeb8b439c6c279874708a3284c6152c3)
+        ;
+
+        
+    
+    
+            var marker_80549044defa644002ad7e0c1d4ac5cf = L.marker(
+                [-22.857, -43.301],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_83a624501328aadfc15268ab836f4d0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_80549044defa644002ad7e0c1d4ac5cf.setIcon(icon_83a624501328aadfc15268ab836f4d0a);
+        
+    
+        var popup_89b6d637cae4cdaf2900ae5111a94381 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa333799a66fa4ed5aa3467d74d65037 = $(`<div id="html_aa333799a66fa4ed5aa3467d74d65037" style="width: 100.0%; height: 100.0%;"><strong>Rio de Janeiro - North Zone</strong><br>1050 fatalities</div>`)[0];
+                popup_89b6d637cae4cdaf2900ae5111a94381.setContent(html_aa333799a66fa4ed5aa3467d74d65037);
+            
+        
+
+        marker_80549044defa644002ad7e0c1d4ac5cf.bindPopup(popup_89b6d637cae4cdaf2900ae5111a94381)
+        ;
+
+        
+    
+    
+            var marker_02fab5ce28bad12baaccae52aec998bd = L.marker(
+                [-12.971, -38.511],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_408e08714abdf6021dfc5ad6aa6eaac1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_02fab5ce28bad12baaccae52aec998bd.setIcon(icon_408e08714abdf6021dfc5ad6aa6eaac1);
+        
+    
+        var popup_11bc5e5db46f740213bc0cfdde6c9624 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec140fb55bc64784feb0447aea5a2e45 = $(`<div id="html_ec140fb55bc64784feb0447aea5a2e45" style="width: 100.0%; height: 100.0%;"><strong>Salvador</strong><br>799 fatalities</div>`)[0];
+                popup_11bc5e5db46f740213bc0cfdde6c9624.setContent(html_ec140fb55bc64784feb0447aea5a2e45);
+            
+        
+
+        marker_02fab5ce28bad12baaccae52aec998bd.bindPopup(popup_11bc5e5db46f740213bc0cfdde6c9624)
+        ;
+
+        
+    
+    
+            var marker_d744e98acdcfb8de8f771077faebee4c = L.marker(
+                [-22.827, -43.054],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_ad0db7e6eaed3853249e6db04d03ab7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d744e98acdcfb8de8f771077faebee4c.setIcon(icon_ad0db7e6eaed3853249e6db04d03ab7d);
+        
+    
+        var popup_c435eccf970267ae4a912ea214b23e67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95fd5b912c030d520a6a11fc97630b75 = $(`<div id="html_95fd5b912c030d520a6a11fc97630b75" style="width: 100.0%; height: 100.0%;"><strong>Sao Goncalo</strong><br>734 fatalities</div>`)[0];
+                popup_c435eccf970267ae4a912ea214b23e67.setContent(html_95fd5b912c030d520a6a11fc97630b75);
+            
+        
+
+        marker_d744e98acdcfb8de8f771077faebee4c.bindPopup(popup_c435eccf970267ae4a912ea214b23e67)
+        ;
+
+        
+    
+    
+            var marker_2b72afae191186532e458390cf88595b = L.marker(
+                [-12.267, -38.967],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_e080456460411a8a029b601a485de739 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2b72afae191186532e458390cf88595b.setIcon(icon_e080456460411a8a029b601a485de739);
+        
+    
+        var popup_0b1935a19f1241923ad438d751984ace = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8b16a54294219e918c30d0ee0f58514 = $(`<div id="html_f8b16a54294219e918c30d0ee0f58514" style="width: 100.0%; height: 100.0%;"><strong>Feira de Santana</strong><br>599 fatalities</div>`)[0];
+                popup_0b1935a19f1241923ad438d751984ace.setContent(html_f8b16a54294219e918c30d0ee0f58514);
+            
+        
+
+        marker_2b72afae191186532e458390cf88595b.bindPopup(popup_0b1935a19f1241923ad438d751984ace)
+        ;
+
+        
+    
+    
+            var marker_1fa389382f58ad593cab7a435b7d58fd = L.marker(
+                [0.039, -51.066],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_7e121f7b3acf891f584fb5dfaf619bdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1fa389382f58ad593cab7a435b7d58fd.setIcon(icon_7e121f7b3acf891f584fb5dfaf619bdd);
+        
+    
+        var popup_6f3a50f73d9555c5f939308c69ce65ca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e07b05f71af7de7db5229c9a280dd36 = $(`<div id="html_8e07b05f71af7de7db5229c9a280dd36" style="width: 100.0%; height: 100.0%;"><strong>Macapa</strong><br>565 fatalities</div>`)[0];
+                popup_6f3a50f73d9555c5f939308c69ce65ca.setContent(html_8e07b05f71af7de7db5229c9a280dd36);
+            
+        
+
+        marker_1fa389382f58ad593cab7a435b7d58fd.bindPopup(popup_6f3a50f73d9555c5f939308c69ce65ca)
+        ;
+
+        
+    
+    
+            var marker_94d03677f4efe14ea7bb33bcdfe7565d = L.marker(
+                [-1.444, -48.473],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_82f93e48208d4911c769b0a22eb4937a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_94d03677f4efe14ea7bb33bcdfe7565d.setIcon(icon_82f93e48208d4911c769b0a22eb4937a);
+        
+    
+        var popup_d12010083c0a1c6fc65c9afa4b323abe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f682b50f5ff6b06c0d5cff065eb5d770 = $(`<div id="html_f682b50f5ff6b06c0d5cff065eb5d770" style="width: 100.0%; height: 100.0%;"><strong>Belem</strong><br>555 fatalities</div>`)[0];
+                popup_d12010083c0a1c6fc65c9afa4b323abe.setContent(html_f682b50f5ff6b06c0d5cff065eb5d770);
+            
+        
+
+        marker_94d03677f4efe14ea7bb33bcdfe7565d.bindPopup(popup_d12010083c0a1c6fc65c9afa4b323abe)
+        ;
+
+        
+    
+    
+            var marker_7c6e4ec24a2225d6cc99d223b5dda8d6 = L.marker(
+                [-3.717, -38.543],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_40e9f8b6904a065fd7aac97a9b6bbacf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7c6e4ec24a2225d6cc99d223b5dda8d6.setIcon(icon_40e9f8b6904a065fd7aac97a9b6bbacf);
+        
+    
+        var popup_450d62fb7e76d8a95b515ba59b82a40e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a479cc253905353efe32c9469f3fee77 = $(`<div id="html_a479cc253905353efe32c9469f3fee77" style="width: 100.0%; height: 100.0%;"><strong>Fortaleza</strong><br>526 fatalities</div>`)[0];
+                popup_450d62fb7e76d8a95b515ba59b82a40e.setContent(html_a479cc253905353efe32c9469f3fee77);
+            
+        
+
+        marker_7c6e4ec24a2225d6cc99d223b5dda8d6.bindPopup(popup_450d62fb7e76d8a95b515ba59b82a40e)
+        ;
+
+        
+    
+    
+            var marker_69b4060ef630fcd1727116f03f00a6e4 = L.marker(
+                [-22.915, -43.488],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_a90d5d393813064d4259374cc8527050 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_69b4060ef630fcd1727116f03f00a6e4.setIcon(icon_a90d5d393813064d4259374cc8527050);
+        
+    
+        var popup_e719b90f52007ae6aff2495595fc31f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a07b6bc33f87e346f9bdf33ea0721dad = $(`<div id="html_a07b6bc33f87e346f9bdf33ea0721dad" style="width: 100.0%; height: 100.0%;"><strong>Rio de Janeiro - West Zone</strong><br>513 fatalities</div>`)[0];
+                popup_e719b90f52007ae6aff2495595fc31f8.setContent(html_a07b6bc33f87e346f9bdf33ea0721dad);
+            
+        
+
+        marker_69b4060ef630fcd1727116f03f00a6e4.bindPopup(popup_e719b90f52007ae6aff2495595fc31f8)
+        ;
+
+        
+    
+    
+            var marker_eba412bdf922655a81fbe4391cd8fabb = L.marker(
+                [-9.666, -35.735],
+                {}
+            ).addTo(map_b092b75255f461e720f6372a95939ba6);
+        
+    
+            var icon_710b85cdd9d9bcbec84d8469af5fc53a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_eba412bdf922655a81fbe4391cd8fabb.setIcon(icon_710b85cdd9d9bcbec84d8469af5fc53a);
+        
+    
+        var popup_0c10c05f928af4e43298d9b97cbc1756 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6de398c7926759deeaa33655f5590d94 = $(`<div id="html_6de398c7926759deeaa33655f5590d94" style="width: 100.0%; height: 100.0%;"><strong>Maceio</strong><br>478 fatalities</div>`)[0];
+                popup_0c10c05f928af4e43298d9b97cbc1756.setContent(html_6de398c7926759deeaa33655f5590d94);
+            
+        
+
+        marker_eba412bdf922655a81fbe4391cd8fabb.bindPopup(popup_0c10c05f928af4e43298d9b97cbc1756)
+        ;
+
+        
+    
+</script>
+</html>
