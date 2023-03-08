@@ -269,7 +269,7 @@ top_ten_fat.to_csv('Top 10 Locations with the Highest Fatalities.csv', index=Tru
 * Remote violence and explosives have the rarest occurences out of the other main conflicts
 * Strategic development is the only main conflict that contributed to 0 fatalities while making up 3.7% of conflicts
 * Violence against civilians (52.61%) has the highest rate of fatalities for main conflicts, attacks (52.46%) have the highest rate of fatalities out of any subconflict
-* Manaus has the highest amount of fatalities in the County at a total of 2,344 fatalities 
+* Manaus has the highest amount of fatalities in the country at a total of 2,344 fatalities 
 
 ## Further Considerations
 * Create a diagram to investigation the association between "ACTOR1" and "ACTOR" and in relation to fatality rates 
